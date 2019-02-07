@@ -5,15 +5,18 @@ $(document).ready(function() {
 	initializePage();
 })
 
-$(".friends name").addEventListener("click",function(e){
-	e.preventDefault();
-	$(this).text(anagrammedName($(this));
-});
+
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$('h3').click(function(event){
+		console.log('click');
+		event.preventDefault();
+		var newName = anagrammedName($(this).text());
+		$(this).text(newName);
+	});
 }
 
 function anagrammedName(name) {
